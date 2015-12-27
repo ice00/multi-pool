@@ -47,7 +47,7 @@ sudo apt-get install build-essential libboost-all-dev libcurl4-openssl-dev libdb
 #sudo apt-getapt-get install libboost1.48-all-dev
 
 # statum mining  
-sudo apt-get install python-twisted python-mysqldb python-dev python-setuptools python-memcache python-simplejson
+sudo apt-get install python-twisted python-mysqldb python-dev python-setuptools python-memcache python-simplejson python-pylibmc
 easy_install -U distribute
 
 # mpos library   

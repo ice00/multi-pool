@@ -65,6 +65,8 @@ cp $BIN_DAEMON ../../../bin
 # change permission to the daemon to not run as root
 chown coind $BASE_DIR/bin/$BIN_DAEMON
 chgrp coind $BASE_DIR/bin/$BIN_DAEMON
+chmod 6755 $BASE_DIR/bin/$BIN_DAEMON
+
 
 # go to root directory of multi-pool
 cd $BASE_DIR/
@@ -104,8 +106,10 @@ mkdir $COIN_PREF_LOW
 chown coind $COIN_PREF_LOW
 chgrp coind $COIN_PREF_LOW
 
+cd $BASE_DIR/wallet/$COIN_PREF_LOW
+
 # create empty coin configuration file
-echo -e "
+echo  "
 rpcuser=
 rpcpassword=
 rpcport=
@@ -115,7 +119,7 @@ addnode=
 
 ##### INSTALL Statum #####
 
-cd $BASE_DIR/statum
+cd $BASE_DIR/stratum
 
 mkdir $COIN_PREF_LOW
 cd $COIN_PREF_LOW
@@ -125,16 +129,16 @@ git clone https://github.com/Crypto-Expert/stratum-mining.git
 
 # activate the cron scripts for this coin
 
-cd $BASE_DIR/bin
-echo -e "nice -n 19 $BASE_DIR/mpos/$COIN_PREF_LOW/run-statistics.sh -d $COIN_PREF_HIGH\n" >> crons_fast.sh
-echo -e "nice -n 19 $BASE_DIR/mpos/$COIN_PREF_LOW/run_maintenance.sh -d $COIN_PREF_HIGH\n" >> crons_fast.sh
-echo -e "nice -n 19 $BASE_DIR/mpos/$COIN_PREF_LOW/run_payout.sh -d $COIN_PREF_HIGH\n" >> crons_slow.sh
-echo -e "nice -n 19 $BASE_DIR/mpos/$COIN_PREF_LOW/run-crons.sh -d $COIN_PREF_HIGH\n" >> crons.sh
+cd $BASE_DIR/script
+echo "nice -n 19 $BASE_DIR/mpos/$COIN_PREF_LOW/run-statistics.sh -d $COIN_PREF_HIGH\n" >> crons_fast.sh
+echo "nice -n 19 $BASE_DIR/mpos/$COIN_PREF_LOW/run_maintenance.sh -d $COIN_PREF_HIGH\n" >> crons_fast.sh
+echo "nice -n 19 $BASE_DIR/mpos/$COIN_PREF_LOW/run_payout.sh -d $COIN_PREF_HIGH\n" >> crons_slow.sh
+echo "nice -n 19 $BASE_DIR/mpos/$COIN_PREF_LOW/run-crons.sh -d $COIN_PREF_HIGH\n" >> crons.sh
 
 # make the startup script for this coin
 
 
-echo -e "
+echo  "
 #!/bin/bash
 #
 # $COIN_PREF_LOW - $COIN_NAME
@@ -190,7 +194,7 @@ update-rc.d coin_$COIN_PREF_LOW defaults
 # save the information about this coin in coin directory
 cd $BASE_DIR/coin/$COIN_PREF_LOW
 
-echo -e "
+echo "
 COIN_NAME=$COIN_NAME
 COIN_PREF_LOW=$COIN_PREF_LOW
 COIN_PREF_HIGH=$COIN_PREF_HIGH

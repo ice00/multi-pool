@@ -50,10 +50,11 @@ git clone $SRC_GITHUB
 cd $BASE_DIR/src/$SRC_PATH
 
 # some build need this directory and permission
-mkdir obj
+mkdir src/obj
 chmod 755 src/leveldb/build_detect_platform
 
 cd $BASE_DIR/src/$SRC_PATH/src
+
 
 # compile the daemon
 make -f makefile.unix USE_UPNP=-

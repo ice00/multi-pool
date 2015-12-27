@@ -41,7 +41,7 @@ sudo apt-get update
 sudo apt-get dist-upgrade
 
 # install the library   
-sudo apt-get install git
+sudo apt-get install git mysql-server
 sudo apt-get install build-essential libboost-all-dev libcurl4-openssl-dev libdb5.3-dev libdb5.3++-dev libssl-dev
 # add specific library
 #sudo apt-getapt-get install libboost1.48-all-dev

@@ -179,10 +179,10 @@ esac
 
 exit $RETVAL  
 
-" >> /etc/inid.d/coin_$COIN_PREF_LOW
+" >> /etc/init.d/coin_$COIN_PREF_LOW
 
-chmod 755 /etc/inid.d/coin_$COIN_PREF_LOW
-chmod +x /etc/inid.d/coin_$COIN_PREF_LOW
+chmod 755 /etc/init.d/coin_$COIN_PREF_LOW
+chmod +x /etc/init.d/coin_$COIN_PREF_LOW
 
 # activate it
 update-rc.d coin_$COIN_PREF_LOW defaults

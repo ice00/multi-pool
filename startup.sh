@@ -21,6 +21,20 @@
 
 BASE_DIR=/opt/multi-pool
 mkdir $BASE_DIR
+
+# make all the tree
+mkdir $BASE_DIR/coin
+mkdir $BASE_DIR/bin
+mkdir $BASE_DIR/src
+mkdir $BASE_DIR/mpos
+mkdir $BASE_DIR/stratum
+mkdir $BASE_DIR/wallet
+mkdir $BASE_DIR/script
+
+# copy all the stuff exatracted from the zip to script directory
+cp * $BASE_DIR/script
+
+
  
 # update the server
 sudo apt-get update
@@ -42,21 +56,6 @@ sudo apache2ctl -k stop; sleep 2; sudo apache2ctl -k start
 
 # add mail server
 sudo apt-get install postfix
-
-# make all the tree
-
-cd $BASE_DIR
-
-mkdir coin
-mkdir bin
-mkdir src
-mkdir mpos
-mkdir stratum
-mkdir wallet
-mkdir script
-
-# copy all the stuff exatracted from the zip to script directory
-cp * $BASE_DIR/script
 
 
 # install stratum and litecoin

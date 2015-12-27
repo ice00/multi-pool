@@ -117,6 +117,9 @@ server=1
 addnode=
 " > ./$COIN_CONFIG
 
+chown coind $COIN_CONFIG
+chgrp coind $COIN_CONFIG
+
 ##### INSTALL Statum #####
 
 cd $BASE_DIR/stratum
@@ -138,8 +141,7 @@ echo "nice -n 19 $BASE_DIR/mpos/$COIN_PREF_LOW/run-crons.sh -d $COIN_PREF_HIGH\n
 # make the startup script for this coin
 
 
-echo  "
-#!/bin/bash
+echo "#!/bin/bash
 #
 # $COIN_PREF_LOW - $COIN_NAME
 RETVAL=0;
@@ -165,7 +167,7 @@ stop
 start
 }
 
-case \"$1\" in
+case \"\$1\" in
 start)
   start
 ;;
@@ -177,11 +179,11 @@ restart)
 ;;
 *)
 
-echo $\"Usage: $0 {start|stop|restart}\"
+echo $\"Usage: \$0 {start|stop|restart}\"
 exit 1
 esac
 
-exit $RETVAL  
+exit \$RETVAL  
 
 " >> /etc/init.d/coin_$COIN_PREF_LOW
 

@@ -53,11 +53,12 @@ cd $BASE_DIR/src/$SRC_PATH
 mkdir obj
 chmod 755 src/leveldb/build_detect_platform
 
+cd $BASE_DIR/src/$SRC_PATH/src
+
 # compile the daemon
 make -f makefile.unix USE_UPNP=-
 
 # copy executable into binary directory
-copy the executable into the bin directory
 cp $BIN_DAEMON ../../../bin
 
 # change permission to the daemon to not run as root

@@ -55,6 +55,10 @@ mkdir stratum
 mkdir wallet
 mkdir script
 
+# copy all the stuff exatracted from the zip to script directory
+cp * $BASE_DIR/script
+
+
 # install stratum and litecoin
 
 cd $BASE_DIR/stratum
@@ -75,5 +79,3 @@ python setup.py install
 groupadd coind
 useradd coind -d /opt/multi-pool/bin -s /bin/false -g coind
 
-# copy all the stuff exatracted from the zip to script directory
-cp * $BASE_DIR/script

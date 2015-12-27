@@ -42,7 +42,7 @@ sudo apt-get dist-upgrade
 
 # install the library   
 sudo apt-get install git
-sudo apt-get install build-essential libboost-all-dev libcurl4-openssl-dev libdb5.1-dev libdb5.1++-dev
+sudo apt-get install build-essential libboost-all-dev libcurl4-openssl-dev libdb5.3-dev libdb5.3++-dev
 # add specific library
 #sudo apt-getapt-get install libboost1.48-all-dev
 

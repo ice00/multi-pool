@@ -84,8 +84,8 @@ git checkout master
 # Create database
 echo "Insert the root password for mysql"
 mysql -p -e "create database ${COIN_PREF_LOW};"
-mysql -p -e "create user \'${COIN_PREF_LOW}\'@\'localhost\' identified by \'${COIN_PREF_LOW}${COIN_PREF_LOW}${COIN_PREF_LOW}\';"
-mysql -p -e "grant all privileges on ${COIN_PREF_LOW}.* TO \'${COIN_PREF_LOW}\'@\'localhost\';"
+mysql -p -e "create user '${COIN_PREF_LOW}'@'localhost' identified by '${COIN_PREF_LOW}${COIN_PREF_LOW}${COIN_PREF_LOW}';"
+mysql -p -e "grant all privileges on ${COIN_PREF_LOW}.* TO '${COIN_PREF_LOW}'@'localhost';"
 # Import structure
 echo "Insert the ${COIN_PREF_LOW} password for mysql"
 mysql -u $COIN_PREF_LOW -p ${COIN_PREF_LOW} < sql/000_base_structure.sql

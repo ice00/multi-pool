@@ -20,6 +20,7 @@
 #  wallet/             wallet (each directory=a coin sigle)
 
 BASE_DIR=/opt/multi-pool
+mkdir $BASE_DIR
  
 # update the server
 sudo apt-get update
@@ -52,6 +53,7 @@ mkdir src
 mkdir mpos
 mkdir stratum
 mkdir wallet
+mkdir script
 
 # install stratum and litecoin
 
@@ -73,5 +75,5 @@ python setup.py install
 groupadd coind
 useradd coind -d /opt/multi-pool/bin -s /bin/false -g coind
 
-# copy all the stuff exatracted from the zip to bin directory
-cp * $BASE_DIR/bin
+# copy all the stuff exatracted from the zip to script directory
+cp * $BASE_DIR/script

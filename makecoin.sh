@@ -133,10 +133,10 @@ git clone https://github.com/Crypto-Expert/stratum-mining.git
 # activate the cron scripts for this coin
 
 cd $BASE_DIR/script
-echo "nice -n 19 $BASE_DIR/mpos/$COIN_PREF_LOW/run-statistics.sh -d $COIN_PREF_HIGH\n" >> crons_fast.sh
-echo "nice -n 19 $BASE_DIR/mpos/$COIN_PREF_LOW/run_maintenance.sh -d $COIN_PREF_HIGH\n" >> crons_fast.sh
-echo "nice -n 19 $BASE_DIR/mpos/$COIN_PREF_LOW/run_payout.sh -d $COIN_PREF_HIGH\n" >> crons_slow.sh
-echo "nice -n 19 $BASE_DIR/mpos/$COIN_PREF_LOW/run-crons.sh -d $COIN_PREF_HIGH\n" >> crons.sh
+echo "nice -n 19 $BASE_DIR/mpos/$COIN_PREF_LOW/cronjobs/run-statistics.sh -d $COIN_PREF_HIGH\n" >> crons_fast.sh
+echo "nice -n 19 $BASE_DIR/mpos/$COIN_PREF_LOW/cronjobs/run_maintenance.sh -d $COIN_PREF_HIGH\n" >> crons_fast.sh
+echo "nice -n 19 $BASE_DIR/mpos/$COIN_PREF_LOW/cronjobs/run_payout.sh -d $COIN_PREF_HIGH\n" >> crons_slow.sh
+echo "nice -n 19 $BASE_DIR/mpos/$COIN_PREF_LOW/cronjobs/run-crons.sh -d $COIN_PREF_HIGH\n" >> crons.sh
 
 # make the startup script for this coin
 

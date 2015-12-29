@@ -8,7 +8,7 @@
 # (C) 2014 Ice Team
 #
 # example of one entries
-# nice -n 19 /opt/multi-pool/mpos/xxx/run-statistics.sh -d XXX
+# nice -n 19 /opt/multi-pool/mpos/xxx/cronjobs/run-statistics.sh -d XXX
 # nice -n 19 /opt/multi-pool/mpos/xxx/cronjobs/run-maintenance.sh -d XXX
 
 

@@ -98,7 +98,7 @@ chown www-data ${COIN_PREF_LOW}/templates/compile ${COIN_PREF_LOW}/templates/cac
 cp $BASE_DIR/mpos/$COIN_PREF_LOW/include/config/global.inc.dist.php  $BASE_DIR/mpos/$COIN_PREF_LOW/include/config/global.inc.php
 
 # create link for apache2
-ln -s /opt/multi-pool/mpos/nka/ /var/www/nka
+ln -s /opt/multi-pool/mpos/$COIN_PREF_LOW/ /var/www/$COIN_PREF_LOW
 
 
 # WALLET
